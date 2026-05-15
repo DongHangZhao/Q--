@@ -1,0 +1,139 @@
+首页点击帖子的爱心弹窗报错,点击留言也报错OperationalError
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: comments.news_id
+[SQL: SELECT comments.id AS comments_id, comments.content AS comments_content, comments.timestamp AS comments_timestamp, comments.author_id AS comments_author_id, comments.post_id AS comments_post_id, comments.video_id AS comments_video_id, comments.news_id AS comments_news_id, comments.likes_count AS comments_likes_count 
+FROM comments 
+WHERE comments.post_id = ? ORDER BY comments.timestamp ASC]
+[parameters: (6,)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+Traceback (most recent call last)
+File "D:\python\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+self.dialect.do_execute(
+^
+File "D:\python\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+ 
+    def do_executemany(self, cursor, statement, parameters, context=None):
+        cursor.executemany(statement, parameters)
+ 
+    def do_execute(self, cursor, statement, parameters, context=None):
+        cursor.execute(statement, parameters)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 
+    def do_execute_no_params(self, cursor, statement, context=None):
+        cursor.execute(statement)
+ 
+    def is_disconnect(
+The above exception was the direct cause of the following exception:
+File "D:\python\Lib\site-packages\flask\app.py", line 2213, in __call__
+return self.wsgi_app(environ, start_response)
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "D:\python\Lib\site-packages\flask\app.py", line 2193, in wsgi_app
+response = self.handle_exception(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+File "D:\python\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+response = self.full_dispatch_request()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "D:\python\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+rv = self.handle_user_exception(e)
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "D:\python\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+rv = self.dispatch_request()
+     ^^^^^^^^^^^^^^^^^^^^^^^
+File "D:\python\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "E:\办公练习\Html\Q文件\python_web_project\app.py", line 996, in post_detail
+comments = Comment.query.filter_by(post_id=post_id).order_by(Comment.timestamp.asc()).all()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "D:\python\Lib\site-packages\sqlalchemy\orm\query.py", line 2704, in all
+return self._iter().all()  # type: ignore
+       ^^^^^^^^^^^^
+File "D:\python\Lib\site-packages\sqlalchemy\orm\query.py", line 2857, in _iter
+result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                              
+File "D:\python\Lib\site-packages\sqlalchemy\orm\session.py", line 2351, in execute
+return self._execute_internal(
+       
+File "D:\python\Lib\site-packages\sqlalchemy\orm\session.py", line 2249, in _execute_internal
+result: Result[Any] = compile_state_cls.orm_execute_statement(
+                      
+File "D:\python\Lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+result = conn.execute(
+         
+File "D:\python\Lib\site-packages\sqlalchemy\engine\base.py", line 1419, in execute
+return meth(
+       
+File "D:\python\Lib\site-packages\sqlalchemy\sql\elements.py", line 527, in _execute_on_connection
+return connection._execute_clauseelement(
+       
+File "D:\python\Lib\site-packages\sqlalchemy\engine\base.py", line 1641, in _execute_clauseelement
+ret = self._execute_context(
+      
+File "D:\python\Lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+return self._exec_single_context(
+       
+File "D:\python\Lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+self._handle_dbapi_exception(
+^
+File "D:\python\Lib\site-packages\sqlalchemy\engine\base.py", line 2363, in _handle_dbapi_exception
+raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "D:\python\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+self.dialect.do_execute(
+^
+File "D:\python\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+cursor.execute(statement, parameters)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: comments.news_id
+[SQL: SELECT comments.id AS comments_id, comments.content AS comments_content, comments.timestamp AS comments_timestamp, comments.author_id AS comments_author_id, comments.post_id AS comments_post_id, comments.video_id AS comments_video_id, comments.news_id AS comments_news_id, comments.likes_count AS comments_likes_count
+FROM comments
+WHERE comments.post_id = ? ORDER BY comments.timestamp ASC]
+[parameters: (6,)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+The debugger caught an exception in your WSGI application. You can now look at the traceback which led to the error.
+To switch between the interactive traceback and the plaintext one, you can click on the "Traceback" headline. From the text traceback you can also create a paste of it. For code execution mouse-over the frame you want to debug and click on the console icon on the right side.
+
+You can execute arbitrary Python code in the stack frames and there are some extra helpers available for introspection:
+
+dump() shows all variables in the frame
+dump(obj) dumps all that's known about the object
+Brought to you by DON'T PANIC, your friendly Werkzeug powered traceback interpreter.
+
+眼睛那个功能也没有具体实现无变化可以删除或者想想这个功能的实现
+
+
+
+还是报错爱心和留言请仔细完善的优化实现
+
+
+001
+首页点击爱心弹窗提示操作失败,可点开该帖子查看发现爱心已经点上
+(索引):1687  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1687
+(索引):1944 全局用户状态已更新
+(索引):1654 用户状态已更新
+(索引):1  Uncaught (in promise) Error: Could not establish connection. Receiving end does not exist.
+(索引):1547   POST http://127.0.0.1:5000/like_undefined/undefined 404 (NOT FOUND)
+(匿名) @ (索引):1547
+(索引):1568  Error: SyntaxError: Unexpected token '<', "<!doctype "... is not valid JSON
+(匿名) @ (索引):1568
+Promise.catch
+(匿名) @ (索引):1568
+(索引):1687  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1687
+
+,请检查并修复,还有给帖子留言时间不准,日期是真实日期时间不对
+
+
+
+爱心点击变红后数字没有实时更改还需要用户手动刷新,且刷新后颜色变灰了应该该用户点击过后就应该一直显示红色除非该用户再次点击表示取消爱心才会实时变灰数字也要实时更新,现有技术栈不足以实现可以扩展其他技术或者导库,,帖子留言显示时间还是不对怎么能是11点呢,应该是19点现在,是中国时间不要搞错了,
+(索引):1652  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1652
+(索引):1909 全局用户状态已更新
+(索引):1619 用户状态已更新
+(索引):1533  Error: TypeError: Cannot set properties of null (setting 'textContent')
+    at (索引):1531:35
+(匿名) @ (索引):1533
+Promise.catch
+(匿名) @ (索引):1533
+

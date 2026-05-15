@@ -1,0 +1,851 @@
+内置用户账号：
+  管理员: admin / admin123
+  普通用户: zhangsan/lisi/wangwu/zhaoliu/tianmi/xiaoming/meimei (密码: password123)
+
+
+
+论坛板块应有个分享或者撰写帖子的板块而不是只能看,并且论坛页面的只有点击红心功能实现了点击留言
+控制台报错GET http://localhost:5000/post/8 404 (NOT FOUND)
+而且论坛板块居然还能自己关注自己应该做个功能校验自己的不应该可以关注,而且已经关注过的用户在数据库里对比前端页面应显示为已关注
+
+用户私信的页面应该显示自己与别人的私信记录并可点击查看或者继续进行聊天,应该有最近联系人和最近陌生人(没有互相关注),,私信如果没有互关或者对方没有回复信息就只能发一条消息或者图片视频等附件
+
+
+
+项目首页点击在线好友私信报错
+
+
+
+首页在线好友哪里在做一个离线好友两个都做成点击切换,并且数据库记录用户每次上线和下线时间,显示用户好友多长时间前在线,内置的几个用户和admin都后续手动上线在替换真实数据,默认给一些时间数据即可,
+好友头像要可点击,跳转到用户或者好友的个人资料页面,并且在数据库里储存对应的关注和粉丝信息点击可以查看关注都有谁和粉丝都有谁,项目里头像都要可点击,私信聊天记录里的用户头像也要可以点击,确保该项目完整可扩展性高,添加和更改功能和板块更全能
+
+只有真实在线状态的用户才会显示到在线好友里,不然就在离线好友里并且头像变灰
+
+
+
+解决该项目还未实现或者优化的功能
+首页经过我手机端和pc端路由器局域网测试发现就算好友在线也不会实时更改还是显示在离线里面,并且只有互相关注的用户才能成为对方的好友,私信聊天窗口界面消息不是实时刷新的还需要用户手动刷新才会显示需要优化和实现,
+右上角私信页面陌生人改为我的好友数据和记录要在数据库可查,就算和好友聊天了最近联系也能看到
+以上功能实现和优化要在数据库可查可更改有记录
+
+
+
+现在用户的好友上线后会从离线状态变为在线状态,但是好友在手机端断开连接,手机端浏览器关闭页面,pc用户端显示好友还是在线直到五分钟后才变为五分钟前在线请提高实时性动态更改,或者说实现动态或者静态刷新用户每次手动刷新才能看到好友是否在线不人性化设计,聊天窗口界面也是如此并没有用户好友发送,用户也需要手动刷新请改进优化不需要用户手动刷新,请优化用户好友在线或者离线动态显示更改并记录上下线时间实时反馈在前端页面给用户看
+
+
+请检查优化用户是否在线的实现可以扩展该项目不必拘泥于原生js和flask,用户明明在线却显示离线有问题而且手机端用户好友上线,pc端首页并没有实际更改好友上线也没有弹窗提示什么的
+
+
+用户是否在线判断有问题用户只是从首页切换到其他页面就给用户当做离线处理了亲修正优化
+
+
+
+新闻板块优化改进为每天实时更新,内容是可以点击查看的新闻页面的都要可以点击有反馈的元素爱心的点击和留言的设置眼睛元素动态增减今日有多少用户看了这条新闻,每天内容都要实时更新从网上采集可以使用扩展技术栈的方式实现,,新闻点开文字带图片或者视频等内容排版整齐内容每天都要更新,在数据库里面有记录和可更改等等功能帮我思考优化
+
+热度板块对应娱乐花边消息,也是内容实时更新每天晚上都是12点更新和新闻实现方式一样按爱心和查看量还有留言数综合排名
+
+全都要真实数据不要给我整模拟数据或者假数据,技术栈你可以扩展或者找开源免费的不要给我整假数据和模拟的!!!!
+
+
+
+
+命令行环境在Windows powershell环境下开发该项目以后不要给我乱用其他系统的命令
+你怎么把之前做的项目咫尺天涯社交平台其他功能删了,之前的视频账户和密码还有聊天记录怎么没了请找回整合为一个项目你怎么分开做了请详细查看数据库和代码以及前端页面并整合
+
+原来就有数据库和原本的系统请不要分散着做整合到一起
+原来的数据库本身就存在,让你优化新闻和热度板块你怎么有新建一个数据库抛弃了原来那一个请找回更新以前那个数据库
+
+
+
+我之前在pc端和手机端个注册了一个账户还有这几个账户之前的聊天记录和好友关系都没了,让你做个新闻板块你怎么换了个数据库
+
+
+请使用之前那个数据库你这个新建的不是原来那个数据库原来那个存储了我新建的两个用户和聊天记录请找回不要给我模拟数据或者干其他事情给我找回,可能是database文件夹下的users.db文件
+
+
+001
+现在整理一下该项目把该项目文件各种配置和所需文件保留其他一次性脚本和以后扩展和开发用不到的文件移动到项目资料开发过程中的更新或者修复脚本并附带word或者md文件说明并按照发生时间排序
+
+并整理咱俩之间对于咫尺天涯项目的所有对话和具体要用的操作和所需用到的库以及知识点以及优化和改进或者修复等整理一个总文件和几个排序分门别类说明的各个文件
+
+最后该项目只下只保留毕业设计项目说明文件和该项目所需文件E:\办公练习\Html\Q文件\python_web_project
+,用不到的不用删移到项目资料里分门别类新建文件夹放置好就行
+
+
+002
+
+项目现在还没有开发完,测试脚本和工具脚本都复制回来吧,部署脚本start_server.bat不是启动脚本吗?
+
+
+003
+
+为什么之前启动方式是 start_server.bat
+新闻板块优化变成现在改成这样
+cd python_web_project
+python run.py
+
+
+004
+
+首页点击新闻报错
+AttributeError
+AttributeError: 'NewsLike' object has no attribute 'user'
+
+Traceback (most recent call last)
+File "D:\python\Lib\site-packages\flask\app.py", line 2213, in __call__
+return self.wsgi_app(environ, start_response)
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^Open an interactive python shell in this frame
+File "D:\python\Lib\site-packages\flask\app.py", line 2193, in wsgi_app
+response = self.handle_exception(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+File "D:\python\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+response = self.full_dispatch_request()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "D:\python\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+rv = self.handle_user_exception(e)
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "D:\python\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+rv = self.dispatch_request()
+     ^^^^^^^^^^^^^^^^^^^^^^^
+File "D:\python\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "E:\办公练习\Html\Q文件\python_web_project\app.py", line 772, in news
+return render_template('news.html', news_items=news_items)
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "D:\python\Lib\site-packages\flask\templating.py", line 151, in render_template
+return _render(app, template, context)
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "D:\python\Lib\site-packages\flask\templating.py", line 132, in _render
+rv = template.render(context)
+     ^^^^^^^^^^^^^^^^^^^^^^^^
+File "D:\python\Lib\site-packages\jinja2\environment.py", line 1301, in render
+self.environment.handle_exception()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "D:\python\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+raise rewrite_traceback_stack(source=source)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "E:\办公练习\Html\Q文件\python_web_project\templates\news.html", line 1, in top-level template code
+{% extends "base.html" %} {% block title %}新闻 - 咫尺天涯{% endblock %} {%
+File "E:\办公练习\Html\Q文件\python_web_project\templates\base.html", line 326, in top-level template code
+<main>{% block content %}{% endblock %}</main>
+File "E:\办公练习\Html\Q文件\python_web_project\templates\news.html", line 73, in block 'content'
+{% if current_user in news.get_liking_users() %} 取消喜欢 {%
+File "E:\办公练习\Html\Q文件\python_web_project\models\__init__.py", line 392, in get_liking_users
+return [like.user for like in self.likes]
+        ^^^^^^^^^
+AttributeError: 'NewsLike' object has no attribute 'user'
+The debugger caught an exception in your WSGI application. You can now look at the traceback which led to the error.
+To switch between the interactive traceback and the plaintext one, you can click on the "Traceback" headline. From the text traceback you can also create a paste of it. For code execution mouse-over the frame you want to debug and click on the console icon on the right side.
+
+You can execute arbitrary Python code in the stack frames and there are some extra helpers available for introspection:
+
+dump() shows all variables in the frame
+dump(obj) dumps all that's known about the object
+Brought to you by DON'T PANIC, your friendly Werkzeug powered traceback interpreter.
+
+
+005
+
+新闻板块排版有问题且新闻图片没有正常显示,看看是采集真实数据的问题还是显示的问题请解决,然后删除数据库里面虚假的模拟的新闻,且每天新闻都要更新,所有数据和记录都要存储在数据库,技术实现不了,项目框架可以扩展使用其他技术实现,不能给我虚假或者模拟数据,新闻也要可以在导航栏的搜索框里搜索关键字可以搜索到或者日期搜索实现你可以考虑优化选择实现,新闻板块每日最新更新的前十条或者前几条都可以以前的新闻可以点击下面的分页符更新页面内容点击查看也可以在右边新建一个页面内的板块,日期点击年月日查找跟日历一样的可以使用主流的框架vue或者其他什么bootstrap都行.
+
+
+006
+
+给我想办法使用国内免费的真实的新闻数据文字图片和视频不要虚假或者模拟只能每天从网上采集更新
+
+007
+点击项目首页报错
+UndefinedError
+jinja2.exceptions.UndefinedError: 'form' is undefined
+
+Traceback (most recent call last)
+File "D:\python\Lib\site-packages\flask\app.py", line 2213, in __call__
+return self.wsgi_app(environ, start_response)
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^Open an interactive python shell in this frame
+File "D:\python\Lib\site-packages\flask\app.py", line 2193, in wsgi_app
+response = self.handle_exception(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+File "D:\python\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+response = self.full_dispatch_request()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "D:\python\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+rv = self.handle_user_exception(e)
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "D:\python\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+rv = self.dispatch_request()
+     ^^^^^^^^^^^^^^^^^^^^^^^
+File "D:\python\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "E:\办公练习\Html\Q文件\python_web_project\app.py", line 309, in index
+return render_template('index.html',
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "D:\python\Lib\site-packages\flask\templating.py", line 151, in render_template
+return _render(app, template, context)
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "D:\python\Lib\site-packages\flask\templating.py", line 132, in _render
+rv = template.render(context)
+     ^^^^^^^^^^^^^^^^^^^^^^^^
+File "D:\python\Lib\site-packages\jinja2\environment.py", line 1301, in render
+self.environment.handle_exception()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "D:\python\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+raise rewrite_traceback_stack(source=source)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "E:\办公练习\Html\Q文件\python_web_project\templates\index.html", line 1, in top-level template code
+{% extends "base.html" %} {% block title %}首页 - 咫尺天涯{% endblock %} {%
+File "E:\办公练习\Html\Q文件\python_web_project\templates\base.html", line 326, in top-level template code
+<main>{% block content %}{% endblock %}</main>
+File "E:\办公练习\Html\Q文件\python_web_project\templates\index.html", line 142, in block 'content'
+{{ form.hidden_tag() }}
+File "D:\python\Lib\site-packages\jinja2\environment.py", line 485, in getattr
+return getattr(obj, attribute)
+       ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'form' is undefined
+The debugger caught an exception in your WSGI application. You can now look at the traceback which led to the error.
+To switch between the interactive traceback and the plaintext one, you can click on the "Traceback" headline. From the text traceback you can also create a paste of it. For code execution mouse-over the frame you want to debug and click on the console icon on the right side.
+
+You can execute arbitrary Python code in the stack frames and there are some extra helpers available for introspection:
+
+dump() shows all variables in the frame
+dump(obj) dumps all that's known about the object
+Brought to you by DON'T PANIC, your friendly Werkzeug powered traceback interpreter.
+
+
+008
+
+账户明明已经登录,点击首页报错
+BuildError
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'follow_user' with values ['username']. Did you mean 'follow' instead?
+
+Traceback (most recent call last)
+File "D:\python\Lib\site-packages\flask\app.py", line 2213, in __call__
+    def __call__(self, environ: dict, start_response: t.Callable) -> t.Any:
+        """The WSGI server calls the Flask application object as the
+        WSGI application. This calls :meth:`wsgi_app`, which can be
+        wrapped to apply middleware.
+        """
+        return self.wsgi_app(environ, start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "D:\python\Lib\site-packages\flask\app.py", line 2193, in wsgi_app
+response = self.handle_exception(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+File "D:\python\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+response = self.full_dispatch_request()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "D:\python\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+rv = self.handle_user_exception(e)
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "D:\python\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+rv = self.dispatch_request()
+     ^^^^^^^^^^^^^^^^^^^^^^^
+File "D:\python\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "E:\办公练习\Html\Q文件\python_web_project\app.py", line 312, in index
+return render_template('index.html',
+       ^^^^^^^^^^^^^^^^^^^^^^^^
+File "D:\python\Lib\site-packages\flask\templating.py", line 151, in render_template
+return _render(app, template, context)
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "D:\python\Lib\site-packages\flask\templating.py", line 132, in _render
+rv = template.render(context)
+     ^^^^^^^^^^^^^^^^^^^^^^^^
+File "D:\python\Lib\site-packages\jinja2\environment.py", line 1301, in render
+self.environment.handle_exception()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "D:\python\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+raise rewrite_traceback_stack(source=source)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "E:\办公练习\Html\Q文件\python_web_project\templates\index.html", line 1, in top-level template code
+{% extends "base.html" %} {% block title %}首页 - 咫尺天涯{% endblock %} {%
+File "E:\办公练习\Html\Q文件\python_web_project\templates\base.html", line 326, in top-level template code
+<main>{% block content %}{% endblock %}</main>
+File "E:\办公练习\Html\Q文件\python_web_project\templates\index.html", line 461, in block 'content'
+href="{{ url_for('follow_user', username=user.username) }}"
+File "D:\python\Lib\site-packages\flask\app.py", line 1697, in url_for
+return self.handle_url_build_error(error, endpoint, values)
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "D:\python\Lib\site-packages\flask\app.py", line 1686, in url_for
+rv = url_adapter.build(  # type: ignore[union-attr]
+     
+File "D:\python\Lib\site-packages\werkzeug\routing\map.py", line 950, in build
+raise BuildError(endpoint, values, method, self)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'follow_user' with values ['username']. Did you mean 'follow' instead?
+The debugger caught an exception in your WSGI application. You can now look at the traceback which led to the error.
+To switch between the interactive traceback and the plaintext one, you can click on the "Traceback" headline. From the text traceback you can also create a paste of it. For code execution mouse-over the frame you want to debug and click on the console icon on the right side.
+
+You can execute arbitrary Python code in the stack frames and there are some extra helpers available for introspection:
+
+dump() shows all variables in the frame
+dump(obj) dumps all that's known about the object
+Brought to you by DON'T PANIC, your friendly Werkzeug powered traceback interpreter.
+
+009
+
+首页用户头像图片都没有正常显示
+
+现在只有首页头像图片显示有问题
+    for item in iterable:
+                ^^^^^^^^
+  File "E:\办公练习\Html\Q文件\python_web_project\app.py", line 45, in event_stream
+    user_connections[current_user.id].append(user_queue)
+                     ^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'id'
+127.0.0.1 - - [19/Jan/2026 17:30:07] "GET /events HTTP/1.1" 200 -
+127.0.0.1 - - [19/Jan/2026 17:30:07] "GET /events HTTP/1.1" 200 -
+Debugging middleware caught exception in streamed response at a point where response headers were already sent.
+Traceback (most recent call last):
+  File "D:\python\Lib\site-packages\werkzeug\wsgi.py", line 289, in __next__
+    return self._next()
+           ~~~~~~~~~~^^
+  File "D:\python\Lib\site-packages\werkzeug\wrappers\response.py", line 32, in _iter_encoded
+    for item in iterable:
+                ^^^^^^^^
+  File "E:\办公练习\Html\Q文件\python_web_project\app.py", line 45, in event_stream
+    user_connections[current_user.id].append(user_queue)
+                     ^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'id'
+127.0.0.1 - - [19/Jan/2026 17:30:07] "GET /events HTTP/1.1" 200 -
+Debugging middleware caught exception in streamed response at a point where response headers were already sent.
+Debugging middleware caught exception in streamed response at a point where response headers were already sent.
+Traceback (most recent call last):
+  File "D:\python\Lib\site-packages\werkzeug\wsgi.py", line 289, in __next__
+    return self._next()
+           ~~~~~~~~~~^^
+  File "D:\python\Lib\site-packages\werkzeug\wrappers\response.py", line 32, in _iter_encoded
+    for item in iterable:
+                ^^^^^^^^
+  File "E:\办公练习\Html\Q文件\python_web_project\app.py", line 45, in event_stream
+    user_connections[current_user.id].append(user_queue)
+                     ^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'id'
+Traceback (most recent call last):
+  File "D:\python\Lib\site-packages\werkzeug\wsgi.py", line 289, in __next__
+    return self._next()
+           ~~~~~~~~~~^^
+  File "D:\python\Lib\site-packages\werkzeug\wrappers\response.py", line 32, in _iter_encoded
+    for item in iterable:
+                ^^^^^^^^
+  File "E:\办公练习\Html\Q文件\python_web_project\app.py", line 45, in event_stream
+    user_connections[current_user.id].append(user_queue)
+                     ^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'id'
+127.0.0.1 - - [19/Jan/2026 17:30:07] "GET /events HTTP/1.1" 200 -
+
+
+010
+
+
+首页头像还是显示有问题,其他页面没事:5000/static/static/uploads/avatars/avatar_3.png:1   Failed to load resource: the server responded with a status of 404 (NOT FOUND)
+:5000/static/static/uploads/avatars/avatar_2.png:1   Failed to load resource: the server responded with a status of 404 (NOT FOUND)
+:5000/static/static/uploads/avatars/avatar_5.png:1   Failed to load resource: the server responded with a status of 404 (NOT FOUND)
+:5000/static/static/uploads/avatars/avatar_9.png:1   Failed to load resource: the server responded with a status of 404 (NOT FOUND)
+:5000/static/static/uploads/avatars/avatar_7.png:1   Failed to load resource: the server responded with a status of 404 (NOT FOUND)
+:5000/static/static/uploads/avatars/avatar_4.png:1   Failed to load resource: the server responded with a status of 404 (NOT FOUND)
+:5000/static/static/uploads/avatars/avatar_8.png:1   Failed to load resource: the server responded with a status of 404 (NOT FOUND)
+:5000/static/static/uploads/avatars/avatar_6.png:1   Failed to load resource: the server responded with a status of 404 (NOT FOUND)
+:5000/static/static/uploads/avatars/3c68fb54-19b6-47ba-8528-c84856775145.jpg:1   Failed to load resource: the server responded with a status of 404 (NOT FOUND)
+:5000/static/static/uploads/avatars/avatar_1.png:1   Failed to load resource: the server responded with a status of 404 (NOT FOUND)
+(索引):2029  Uncaught ReferenceError: checkFriendStatus is not defined
+    at HTMLDocument.<anonymous> ((索引):2029:17)
+(索引):1859  SSE连接错误: Event
+eventSource.onerror @ (索引):1859
+(索引):1827 用户状态已更新
+(索引):2087 全局用户状态已更新
+(索引):1859  SSE连接错误: Event
+eventSource.onerror @ (索引):1859
+(索引):1  Uncaught (in promise) Error: Could not establish connection. Receiving end does not exist.
+(索引):1859  SSE连接错误: Event
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+(索引):1859  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+  SSE连接错误: Event {isTrusted: true, type: 'error', target: EventSource, currentTarget: EventSource, eventPhase: 2, …}
+eventSource.onerror @ (索引):1859
+
+011
+请修复首页所有头像显示问题路径多个static这是其中一个帮我全部改正/static//static/uploads/avatars/avatar_8.png
+
+
+012
+
+
+
