@@ -1,0 +1,16 @@
+# 1. 压缩包（你那个 579MB 的 7z 直接屏蔽）
+*.7z
+*.zip
+*.rar
+*.tar
+*.gz
+
+# 2. 视频（225MB mp4、54MB mov 全部屏蔽）
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.flv
+
+# 3. 上传附件目录（直接整个目录不上传）
+python_web_project/static/uploads/

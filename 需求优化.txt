@@ -1,0 +1,221 @@
+新闻页面的<div class="content-body">查看详情：https://www.thepaper.cn/newsDetail_forward_32936111</div>要可以跳转到对应的新闻网站做成a标签美化样式跳转到新闻网站，从2026年1月开始到现在4月10号查看数据库和记录，没有抓取的新闻也要抓取补充进数据库可以正常显示点击查看，
+
+后台管理员页面和功能以及其他测试账户也要对应的完善管理员可以分配权限给用户查看内容和功能板块以及测试功能和数据库管理功能的各种页面
+
+还有测试的后台页面和功能测试的页面也要完善可以单独测试功能的整理后台页面可以分配到测试用户里面可以测试各种服务和接口什么的是否报错是否成功，
+还有数据库可视化动态查看编辑数据，后台界面查看是否有没有的话也要增加和完善都整合到管理员功能和页面里面
+一、Django 项目（最简单：自带 admin 后台 + ORM）
+Django 开箱即用，不用写代码就能可视化管理数据，是最推荐的方式。
+1. 用 Django 自带 admin 管理后台（可视化编辑，零代码）
+步骤 1：注册模型到 admin
+打开你的 app 里的 admin.py：
+python
+运行
+from django.contrib import admin
+from .models import 你的模型名  # 比如 User、Product、Order
+
+# 注册模型，后台就能管理
+admin.site.register(你的模型名)
+步骤 2：创建超级管理员（登录后台用）
+终端运行：
+bash
+运行
+python manage.py createsuperuser
+按提示输入用户名、邮箱、密码。
+步骤 3：启动项目，登录后台
+bash
+运行
+python manage.py runserver
+浏览器打开：
+plaintext
+http://127.0.0.1:8000/admin/
+登录后：
+直接查看所有数据
+点数据修改 / 删除
+点「Add」新增数据
+✅ 完全可视化，和操作表格一样简单。
+
+
+
+
+管理员功能和页面没有实现请完整实现所有功能和页面，点击管理页面报错
+UndefinedError
+
+jinja2.exceptions.UndefinedError: 'posts' is undefined
+
+
+
+Traceback (most recent call last)
+
+File "D:\python\Lib\site-packages\flask\app.py", line 2213, in __call__
+新闻页面的<div class="content-body">查看详情：https://www.thepaper.cn/newsDetail_forward_32936111</div>要可以跳转到对应的新闻网站做成a标签美化样式跳转到新闻网站，从2026年1月开始到现在4月10号查看数据库和记录，没有抓取的新闻也要抓取补充进数据库可以正常显示点击查看，
+
+
+
+后台管理员页面和功能以及其他测试账户也要对应的完善管理员可以分配权限给用户查看内容和功能板块以及测试功能和数据库管理功能的各种页面
+
+
+
+还有测试的后台页面和功能测试的页面也要完善可以单独测试功能的整理后台页面可以分配到测试用户里面可以测试各种服务和接口什么的是否报错是否成功，
+
+还有数据库可视化动态查看编辑数据，后台界面查看是否有没有的话也要增加和完善都整合到管理员功能和页面里面
+
+一、Django 项目（最简单：自带 admin 后台 + ORM）
+
+Django 开箱即用，不用写代码就能可视化管理数据，是最推荐的方式。
+
+1. 用 Django 自带 admin 管理后台（可视化编辑，零代码）
+
+步骤 1：注册模型到 admin
+
+打开你的 app 里的 admin.py：
+
+python
+
+运行
+
+from django.contrib import admin
+
+from .models import 你的模型名  # 比如 User、Product、Order
+
+
+
+# 注册模型，后台就能管理
+
+admin.site.register(你的模型名)
+
+步骤 2：创建超级管理员（登录后台用）
+
+终端运行：
+
+bash
+
+运行
+
+python manage.py createsuperuser
+
+按提示输入用户名、邮箱、密码。
+
+步骤 3：启动项目，登录后台
+
+bash
+
+运行
+
+python manage.py runserver
+
+浏览器打开：
+
+plaintext
+
+http://127.0.0.1:8000/admin/
+
+登录后：
+
+直接查看所有数据
+
+点数据修改 / 删除
+
+点「Add」新增数据
+
+✅ 完全可视化，和操作表格一样简单。
+
+return self.wsgi_app(environ, start_response)
+
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+File "D:\python\Lib\site-packages\flask\app.py", line 2193, in wsgi_app
+
+response = self.handle_exception(e)
+
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+
+File "D:\python\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+
+response = self.full_dispatch_request()
+
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+File "D:\python\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+
+rv = self.handle_user_exception(e)
+
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+File "D:\python\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+
+rv = self.dispatch_request()
+
+     ^^^^^^^^^^^^^^^^^^^^^^^
+
+File "D:\python\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+
+return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+File "D:\python\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+
+return current_app.ensure_sync(func)(*args, **kwargs)
+
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+File "E:\办公练习\Html\Q文件\python_web_project\app.py", line 948, in admin
+
+return render_template('admin/index.html', users=users, ban_form=ban_form)
+
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+File "D:\python\Lib\site-packages\flask\templating.py", line 151, in render_template
+
+return _render(app, template, context)
+
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+File "D:\python\Lib\site-packages\flask\templating.py", line 132, in _render
+
+rv = template.render(context)
+
+     ^^^^^^^^^^^^^^^^^^^^^^^^
+
+File "D:\python\Lib\site-packages\jinja2\environment.py", line 1301, in render
+
+self.environment.handle_exception()
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+File "D:\python\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+
+raise rewrite_traceback_stack(source=source)
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+File "E:\办公练习\Html\Q文件\python_web_project\templates\admin\index.html", line 1, in top-level template code
+
+{% extends "base.html" %} {% block title %}管理员面板 - 咫尺天涯{% endblock %}
+
+File "E:\办公练习\Html\Q文件\python_web_project\templates\base.html", line 326, in top-level template code
+
+<main>{% block content %}{% endblock %}</main>
+
+File "E:\办公练习\Html\Q文件\python_web_project\templates\admin\index.html", line 154, in block 'content'
+
+{% for post in posts[:5] %}
+
+jinja2.exceptions.UndefinedError: 'posts' is undefined
+
+The debugger caught an exception in your WSGI application. You can now look at the traceback which led to the error.
+
+To switch between the interactive traceback and the plaintext one, you can click on the "Traceback" headline. From the text traceback you can also create a paste of it. For code execution mouse-over the frame you want to debug and click on the console icon on the right side.
+
+
+
+You can execute arbitrary Python code in the stack frames and there are some extra helpers available for introspection:
+
+
+
+dump() shows all variables in the frame
+
+dump(obj) dumps all that's known about the object
+
+Brought to you by DON'T PANIC, your friendly Werkzeug powered traceback interpreter.
